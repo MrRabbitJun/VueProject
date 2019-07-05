@@ -56,6 +56,7 @@
         <option
           v-for="c in citys"
           :value="c.code"
+          :key="c.id"
         >
           {{c.name}}
         </option>

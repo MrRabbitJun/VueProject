@@ -20,6 +20,7 @@
       </li>
     </ul>
     <button @click="$router.back()">后退</button>
+
     <!--详情-->
     <router-view></router-view>
   </div>
@@ -38,19 +39,6 @@ export default {
     this.getTechArr();
   },
   methods: {
-    getTechArr() {
-      axios
-        .get("/static/tech.json")
-        .then(response => {
-          //function (response) {
-          console.log(response.data, this);
-          this.techArr = response.data;
-        })
-        .catch(error => {
-          //function (error) {
-          alert(error.message);
-        });
-    },
     pushTech(id) {
       // push 可后退回来
       // 是 $router , 有字母 r 路由器。用的反单引号 ` ` 拼接
@@ -59,6 +47,19 @@ export default {
     replaceTech(id) {
       // replace 不可后退回来
       this.$router.replace(`/news/tech/detail/${id}`);
+    },
+    getTechArr() {
+      axios
+        .get("/static/sport.json")
+        .then(response => {
+          //function (response) {
+          console.log(response.data, this);
+          this.sportArr = response.data;
+        })
+        .catch(error => {
+          //function (error) {
+          alert(error.message);
+        });
     }
   }
 };
