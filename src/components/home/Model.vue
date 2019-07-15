@@ -76,14 +76,14 @@
     <p>{{content | contentFilter}}</p>
     <input
       type="text"
-      :value="content | contentFilter"
+      v-model="content"
     >
 
     <h3>测试过滤器多个参数</h3>
     <p>{{javaScore | add(vueScore, pythonScore)}}</p>
     <input
-      type="text"
-      :value="javaScore | add(vueScore, pythonScore)"
+      type="Number"
+      v-model="javaScore"
     >
   </div>
 </template>
@@ -104,8 +104,8 @@ export default {
       desc: "",
       content: "小伙子，tmd就是个SB",
       javaScore: 90,
-      vueScore: 99,
-      pythonScore: 89
+      vueScore: 100,
+      pythonScore: 100
     };
   },
   filters: {
@@ -123,7 +123,7 @@ export default {
     },
     add(num1, num2, num3) {
       // add 过滤名， num1 其实就是引用时 | 左边的那个参数
-      return num1 + num2 + num3;
+      return num1 - 0 + (num2 - 0) + (num3 - 0);
     }
   },
   methods: {

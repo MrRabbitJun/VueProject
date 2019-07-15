@@ -1,18 +1,18 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+/* jshint esversion: 6 */
+import Vue from 'vue';
+import Router from 'vue-router';
+Vue.use(Router);
 
-Vue.use(Router)
-
-import AppHome from '../components/home/AppHome.vue'
-import News from '../components/home/news.vue'
-import Sport from '../components/home/Sports.vue'
-import Tech from '../components/home/Tech.vue'
-import SportDetail from '../components/home/SportDetail.vue'
-import TechDetail from '../components/home/TechDetail.vue'
-import About from '../components/home/About.vue'
-import Model from '../components/home/Model.vue'
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../style/dashboard.css'
+import AppHome from '../components/home/AppHome.vue';
+import News from '../components/home/news.vue';
+import Sport from '../components/home/Sports.vue';
+import Tech from '../components/home/Tech.vue';
+import SportDetail from '../components/home/SportDetail.vue';
+import TechDetail from '../components/home/TechDetail.vue';
+import About from '../components/home/About.vue';
+import Model from '../components/home/Model.vue';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../style/dashboard.css';
 
 export default new Router({
   linkActiveClass: 'active',
@@ -61,4 +61,4 @@ export default new Router({
       component: About
     }
   ]
-})
+});
