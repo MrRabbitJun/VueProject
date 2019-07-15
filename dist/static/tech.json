@@ -1,0 +1,16 @@
+[{
+    "id": 1,
+    "title": "Information Title1",
+    "content": "Text News Information Here."
+  },
+  {
+    "id": 2,
+    "title": "Information Title2",
+    "content": "Text News Information Here."
+  },
+  {
+    "id": 3,
+    "title": "Information Title3",
+    "content": "Text News Information Here."
+  }
+]
