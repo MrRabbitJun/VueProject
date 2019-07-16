@@ -12,18 +12,17 @@
       type="text"
       v-model="englishScore"
     >
-    </input>
     <br>
     数学：
     <input
       type="text"
       v-model="mathScore"
-    ></input>
+    >
     <br>总分：
     <input
       type="text"
       v-model="sumScore"
-    ></input>
+    >
   </div>
 </template>
 
@@ -38,10 +37,20 @@ export default {
       sumScore: 180
     };
   },
+  // computed: {
+  //   count() {
+  //     return this.$store.state.count;
+  //   }
+  // },
   watch: {
     mathScore: {
       handler: function(val) {
         this.sumScore = val - 0 + (this.englishScore - 0);
+      }
+    },
+    englishScore: {
+      handler: function(val) {
+        this.sumScore = val - 0 + (this.mathScore - 0);
       }
     }
   }

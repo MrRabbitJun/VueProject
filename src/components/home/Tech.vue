@@ -19,6 +19,12 @@
         >查看(replace)</button>
       </li>
     </ul>
+    <h3>Vuex Example<span class="label label-default"> {{ count }}</span></h3>
+
+    <p>
+      <button @click="increment">+</button>
+      <button @click="decrement">-</button>
+    </p>
     <button @click="$router.back()">后退</button>
 
     <!--详情-->
@@ -60,6 +66,17 @@ export default {
           //function (error) {
           alert(error.message);
         });
+    },
+    increment() {
+      this.$store.commit("increment");
+    },
+    decrement() {
+      this.$store.commit("decrement");
+    }
+  },
+  computed: {
+    count() {
+      return this.$store.state.count;
     }
   }
 };
