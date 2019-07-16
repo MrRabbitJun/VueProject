@@ -35,7 +35,7 @@
           <input
             type="text"
             class="form-control"
-            @blur="search"
+            v-focus
             placeholder="Search..."
           >
         </form>
@@ -51,9 +51,11 @@ export default {
       projectName: "RekTec"
     };
   },
-  methods: {
-    search() {
-      alert("失去焦点");
+  directives: {
+    focus: {
+      inserted: function(el) {
+        el.focus();
+      }
     }
   }
 };
